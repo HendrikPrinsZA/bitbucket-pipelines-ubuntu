@@ -20,7 +20,7 @@ Ubuntu for Bitbucket Pipelines CI/CD
 
 ## Example - Local
 ```SHELL
-docker run -it --volume=/Applications/MAMP/htdocs/project:/project --workdir="/project" --entrypoint=/bin/bash hendrikprinsza/bitbucket-pipelines-ubuntu
+docker run -it --volume=/var/www/html/project:/project --workdir="/project" --entrypoint=/bin/bash hendrikprinsza/bitbucket-pipelines-ubuntu
 ```
 
 ## Example - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
