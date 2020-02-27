@@ -18,8 +18,8 @@
 ## Example - Build the image locally
 ```SHELL
 git clone git@github.com:HendrikPrinsZA/bitbucket-pipelines-ubuntu.git && cd bitbucket-pipelines-ubuntu
-docker build . --tag local-bitbucket-pipelines-ubuntu
-docker run -it --volume=/var/www/html/project:/project --workdir="/project" --entrypoint=/bin/bash local-bitbucket-pipelines-ubuntu
+docker build . --tag bitbucket-pipelines-ubuntu-local
+docker run -it --volume=/var/www/html/project:/project --workdir="/project" --entrypoint=/bin/bash bitbucket-pipelines-ubuntu-local
 ```
 
 ## Example - Remote image
