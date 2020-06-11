@@ -35,7 +35,7 @@ pipelines:
         image: hendrikprinsza/bitbucket-pipelines-ubuntu
         script:
           - phpunit --version
-          - mysql -h127.0.0.1 -uroot -ppassword123 -e "SET GLOBAL sql_mode = 'NO_ENGINE_SUBSTITUTION';"
+          - mysql -h127.0.0.1 -uroot -pthepassword123 -e "SET GLOBAL sql_mode = 'NO_ENGINE_SUBSTITUTION';"
         services:
           - mysql
 
