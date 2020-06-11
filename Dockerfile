@@ -7,8 +7,7 @@ LABEL Description="Ubuntu for Bitbucket Pipelines CI/CD" \
 ENV DEBIAN_FRONTEND noninteractive
 
 # Classic update & upgrade
-RUN apt-get update
-RUN apt-get upgrade -y
+RUN apt-get update && apt-get upgrade -y
 
 # Install some common packages
 RUN apt-get -y --no-install-recommends install \
@@ -39,41 +38,53 @@ RUN apt-get update && \
 	curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
 	apt-get install -y nodejs
 
-# Install PHP & modules
-RUN apt-get -y --no-install-recommends install \
-	php7.0 \
-	php7.0-bcmath \
-	php7.0-bz2 \
-	php7.0-cgi \
-	php7.0-cli \
-	php7.0-common \
-	php7.0-curl \
-	php7.0-dev \
-	php7.0-enchant \
-	php7.0-fpm \
-	php7.0-gd \
-	php7.0-gmp \
-	php7.0-imap \
-	php7.0-interbase \
-	php7.0-intl \
-	php7.0-json \
-	php7.0-ldap \
-	php7.0-mbstring \
-	php7.0-mcrypt \
-	php7.0-mysql \
-	php7.0-odbc \
-	php7.0-opcache \
-	php7.0-pgsql \
-	php7.0-phpdbg \
-	php7.0-pspell \
-	php7.0-readline \
-	php7.0-recode \
-	php7.0-sqlite3 \
-	php7.0-sybase \
-	php7.0-tidy \
-	php7.0-xmlrpc \
-	php7.0-xsl \
-	php7.0-zip
+# Update
+RUN apt-get update
+
+# PHP
+## Remove all the stock php packages
+RUN apt-get purge -y `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
+
+## Add the PPA
+RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
+
+## Install
+RUN apt-get update && apt-get install -y php7.2
+
+## Modules - install
+RUN apt-get install -y \
+    php7.2-bcmath \
+    php7.2-bz2 \
+    php7.2-cgi \
+    php7.2-cli \
+    php7.2-common \
+    php7.2-curl \
+    php7.2-dev \
+    php7.2-enchant \
+    php7.2-fpm \
+    php7.2-gd \
+    php7.2-gmp \
+    php7.2-imap \
+    php7.2-interbase \
+    php7.2-intl \
+    php7.2-json \
+    php7.2-ldap \
+    php7.2-mbstring \
+    php7.2-mysql \
+    php7.2-odbc \
+    php7.2-opcache \
+    php7.2-pgsql \
+    php7.2-phpdbg \
+    php7.2-pspell \
+    php7.2-readline \
+    php7.2-snmp \
+    php7.2-sqlite3 \
+    php7.2-sybase \
+    php7.2-tidy \
+    php7.2-xmlrpc \
+    php7.2-xsl \
+    php7.2-zip \
+    php7.2-xdebug
 
 # Composer & PHPUnit
 RUN \

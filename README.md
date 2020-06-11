@@ -5,8 +5,8 @@
 - [NPM](https://www.npmjs.com/) `5.6`
   - [Gulp](http://gulpjs.com/), [Webpack](https://webpack.github.io/), [Mocha](https://mochajs.org/), [Grunt](http://gruntjs.com/), [Codeception](https://codeception.com/), [Yarn](https://yarnpkg.com/)
 - [Perl](https://www.perl.org/) `5.22`
-- [PHP](http://www.php.net/) `7.0.30`
-  - `bcmath`, `bz2`, `cgi`, `cli`, `common`, `curl`, `dev`, `enchant`, `fpm`, `gd`, `gmp`, `imap`, `interbase`, `intl`, `json`, `ldap`, `mbstring`, `mcrypt`, `mysql`, `odbc`, `opcache`, `pgsql`, `phpdbg`, `pspell`, `readline`, `recode`, `sqlite3`, `sybase`, `tidy`, `xmlrpc`, `xsl`, `zip`
+- [PHP](http://www.php.net/) `7.2`
+  - `bcmath`,`bz2`,`cgi`,`cli`,`common`,`curl`,`dev`,`enchant`,`fpm`,`gd`,`gmp`,`imap`,`interbase`,`intl`,`json`,`ldap`,`mbstring`,`mysql`,`odbc`,`opcache`,`pgsql`,`phpdbg`,`pspell`,`readline`,`snmp`,`sqlite3`,`sybase`,`tidy`,`xmlrpc`,`xsl`,`zip`,`xdebug`
 - [PHPUnit](https://phpunit.de/) `5.7.27`
 - [Python](https://www.python.org/) `2.7`
 - [Ruby](https://www.ruby-lang.org/) `2.3`
